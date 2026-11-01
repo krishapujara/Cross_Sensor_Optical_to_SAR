@@ -1,0 +1,176 @@
+"""
+Aerospace Mission UI theme, CSS injection, and layout components for Streamlit.
+"""
+import streamlit as st
+
+AEROSPACE_CSS = """
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    
+    /* Main Background & Fonts */
+    .stApp {
+        background-color: #070B14;
+        color: #E2E8F0;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background-color: #0C1222 !important;
+        border-right: 1px solid #1E293B;
+    }
+    
+    /* Header & Mission Banner */
+    .mission-header {
+        background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F172A 100%);
+        border: 1px solid #2E3A59;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.1);
+    }
+    
+    .mission-title {
+        color: #F8FAFC;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 6px;
+    }
+    
+    .mission-subtitle {
+        color: #38BDF8;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+    
+    .disclaimer-box {
+        background: rgba(245, 158, 11, 0.08);
+        border-left: 4px solid #F59E0B;
+        border-radius: 6px;
+        padding: 12px 16px;
+        color: #FDE68A;
+        font-size: 0.85rem;
+        margin-top: 12px;
+        line-height: 1.5;
+    }
+    
+    /* Custom Aerospace Card */
+    .aerospace-card {
+        background-color: #0F172A;
+        border: 1px solid #1E293B;
+        border-radius: 10px;
+        padding: 18px;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    
+    .aerospace-card:hover {
+        border-color: #38BDF8;
+    }
+    
+    .card-title {
+        color: #94A3B8;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+    }
+    
+    .card-value {
+        color: #F8FAFC;
+        font-size: 1.6rem;
+        font-weight: 700;
+        font-family: 'JetBrains Mono', monospace;
+    }
+    
+    /* Status Badges */
+    .badge-verified {
+        background-color: rgba(16, 185, 129, 0.15);
+        color: #34D399;
+        border: 1px solid #059669;
+        border-radius: 6px;
+        padding: 3px 8px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    
+    .badge-warning {
+        background-color: rgba(245, 158, 11, 0.15);
+        color: #FBBF24;
+        border: 1px solid #D97706;
+        border-radius: 6px;
+        padding: 3px 8px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    
+    .badge-error {
+        background-color: rgba(239, 68, 68, 0.15);
+        color: #F87171;
+        border: 1px solid #DC2626;
+        border-radius: 6px;
+        padding: 3px 8px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    
+    /* Buttons */
+    .stButton>button {
+        background: linear-gradient(135deg, #0284C7 0%, #2563EB 100%);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 0.5rem 1.2rem;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+        transition: all 0.2s ease;
+    }
+    
+    .stButton>button:hover {
+        background: linear-gradient(135deg, #0369A1 0%, #1D4ED8 100%);
+        box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
+        transform: translateY(-1px);
+    }
+    
+    /* Streamlit Metric Overrides */
+    [data-testid="stMetricValue"] {
+        color: #38BDF8 !important;
+        font-family: 'JetBrains Mono', monospace;
+    }
+    
+    /* Form inputs */
+    .stSelectbox, .stSlider, .stNumberInput {
+        color: #F8FAFC;
+    }
+</style>
+"""
+
+def apply_theme():
+    """Inject aerospace dark theme CSS."""
+    st.markdown(AEROSPACE_CSS, unsafe_allow_html=True)
+
+def render_mission_banner(title: str, subtitle: str = "ISRO / URSC RESEARCH INTERNSHIP DEMONSTRATION"):
+    """Render the standard dark aerospace mission header."""
+    st.markdown(
+        f"""
+        <div class="mission-header">
+            <div class="mission-subtitle">🛰️ {subtitle}</div>
+            <div class="mission-title">{title}</div>
+            <div style="color: #94A3B8; font-size: 0.95rem; margin-top: 4px;">
+                Deep Learning Optical-to-SAR Cross-Sensor Translation System • PyTorch Pix2Pix Baseline
+            </div>
+            <div class="disclaimer-box">
+                <strong>⚠️ Scientific Integrity Notice:</strong> Synthetic SAR imagery generated by deep learning models is a statistical visual estimate of radar reflectance from optical features. It is <strong>NOT</strong> an actual radar acquisition and cannot replace genuine physical SAR observations or calibrate true microwave backscatter.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )

@@ -1,0 +1,47 @@
+[
+  {
+    "experiment_id": "e2e_verification_run",
+    "dataset": "SEN1-2",
+    "model_architecture": "Pix2Pix (UNet-256 + PatchGAN-70)",
+    "epochs_trained": 2,
+    "total_duration_sec": 1.14,
+    "best_checkpoint": "C:\\Users\\DELL\\.gemini\\antigravity-ide\\scratch\\Cross_Sensor_Optical_to_SAR\\artifacts\\checkpoints\\e2e_verification_run_epoch_2.pt",
+    "best_val_psnr": 19.331,
+    "final_metrics": {
+      "loss_g": 18.2741,
+      "loss_d": 0.7209,
+      "psnr": 19.331,
+      "ssim": 0.0261,
+      "mae": 0.1705,
+      "mse": 0.0467
+    },
+    "split_info": {
+      "train_count": 3,
+      "val_count": 1,
+      "test_count": 1
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "loss_g": 18.7561,
+        "loss_d": 0.7379,
+        "val_psnr": 19.308,
+        "val_ssim": 0.0263,
+        "val_mae": 0.1708,
+        "val_mse": 0.0469,
+        "is_best": true
+      },
+      {
+        "epoch": 2,
+        "loss_g": 18.2741,
+        "loss_d": 0.7209,
+        "val_psnr": 19.331,
+        "val_ssim": 0.0261,
+        "val_mae": 0.1705,
+        "val_mse": 0.0467,
+        "is_best": true
+      }
+    ],
+    "timestamp": "2026-10-31 09:31:12"
+  }
+]

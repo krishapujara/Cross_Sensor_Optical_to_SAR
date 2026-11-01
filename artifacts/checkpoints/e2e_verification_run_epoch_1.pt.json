@@ -1,0 +1,21 @@
+{
+  "filename": "e2e_verification_run_epoch_1.pt",
+  "experiment_id": "e2e_verification_run",
+  "epoch": 1,
+  "metrics": {
+    "psnr": 19.308,
+    "ssim": 0.0263,
+    "mae": 0.1708,
+    "mse": 0.0469
+  },
+  "hyperparameters": {
+    "learning_rate": 0.0002,
+    "beta1": 0.5,
+    "beta2": 0.999,
+    "lambda_l1": 100.0,
+    "base_filters": 16,
+    "device": "cpu",
+    "model": "Pix2Pix (UNet256 + PatchGAN)"
+  },
+  "saved_at": "2026-10-31 09:31:11"
+}

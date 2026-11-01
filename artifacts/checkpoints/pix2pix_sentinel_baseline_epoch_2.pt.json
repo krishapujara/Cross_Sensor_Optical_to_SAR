@@ -1,0 +1,21 @@
+{
+  "filename": "pix2pix_sentinel_baseline_epoch_2.pt",
+  "experiment_id": "pix2pix_sentinel_baseline",
+  "epoch": 2,
+  "metrics": {
+    "psnr": 19.991,
+    "ssim": 0.0446,
+    "mae": 0.154,
+    "mse": 0.0403
+  },
+  "hyperparameters": {
+    "learning_rate": 0.0002,
+    "beta1": 0.5,
+    "beta2": 0.999,
+    "lambda_l1": 100.0,
+    "base_filters": 32,
+    "device": "cpu",
+    "model": "Pix2Pix (UNet256 + PatchGAN)"
+  },
+  "saved_at": "2026-10-31 19:34:57"
+}
