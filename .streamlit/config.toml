@@ -1,0 +1,14 @@
+[server]
+# Disable hot-reload file watcher - prevents RuntimeError crash from
+# PyTorch C++ custom class registry incompatibility with Streamlit's
+# local_sources_watcher on Windows (Python 3.13 + torch 2.x)
+fileWatcherType = "none"
+port = 8501
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+# Don't try to import torch internals for path inspection
+fastReruns = false
